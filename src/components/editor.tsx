@@ -34,7 +34,9 @@ export function Terminal() {
 
   useEffect(() => {
     startCodeWriting(0);
-    return () => currentInterval.current && clearInterval(currentInterval.current);
+    return () => {
+      if (currentInterval.current) clearInterval(currentInterval.current);
+    };
   }, [startCodeWriting]);
 
   useEffect(() => {
