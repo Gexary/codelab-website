@@ -154,7 +154,7 @@ function AppHeader() {
         <div className="absolute w-full dots bottom-2 left-0 h-0" />
       </div>
       <div className="absolute top-0 left-24 h-full flex items-center justify-center">
-        <img src="/codelab-logo.svg" className="w-8 h-8" />
+        <img src="/codelab-website/codelab-logo.svg" className="w-8 h-8" />
         <span className="text-white ml-2 text-xl font-medium">CodeLab</span>
       </div>
       <div className="absolute top-0 right-24 h-full flex items-center justify-center">
@@ -206,8 +206,8 @@ function BeamsBackground() {
         scale={0.2}
         rotation={30}
       />
-      <img src="/pattern.svg" className="absolute -bottom-8 -right-9 w-[50%] opacity-50 pointer-events-none" />
-      <img src="/patternl.svg" className="absolute -bottom-8 -left-9 w-[50%] opacity-50 pointer-events-none" />
+      <img src="/codelab-website/pattern.svg" className="absolute -bottom-8 -right-9 w-[50%] opacity-50 pointer-events-none" />
+      <img src="/codelab-website/patternl.svg" className="absolute -bottom-8 -left-9 w-[50%] opacity-50 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-full h-56 bg-gradient-to-t from-zinc-950 to-zinc-950/0"></div>
       <div className="absolute top-0 left-0 w-full h-56 bg-gradient-to-b from-zinc-950 to-zinc-950/0"></div>
     </div>
@@ -257,7 +257,7 @@ function Footer() {
       <div className="flex flex-row justify-between">
         <div className="space-y-4 max-w-2xl">
           <div className="flex flex-row items-center justify-start gap-4">
-            <img src="/codelab-logo.svg" className="w-12 h-12" />
+            <img src="/codelab-website/codelab-logo.svg" className="w-12 h-12" />
             <div className="space-y-1">
               <p className="text-xl font-medium text-left">CodeLab</p>
               <p className="text-sm text-zinc-400">Lycée Descartes</p>
