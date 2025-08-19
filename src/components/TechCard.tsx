@@ -1,12 +1,14 @@
+import Image from "@/components/CustomImage";
+
 export function TechCard({ category }: { category: Category }) {
   return (
     <div className="flex gap-8">
-      <div className="w-22 h-22 rounded-md bg-white/5 border border-white/5 shrink-0 flex items-center justify-center">
-        <img src={category.icon} alt={category.title} className="w-[60%]" />
+      <div className="w-22 h-22 rounded-2xl bg-white/5 shrink-0 flex items-center justify-center shiny-glow shiny-bg">
+        <Image src={category.icon} alt={category.title} className="w-[60%] -grayscale" />
       </div>
       <div>
-        <h3 className="font-medium mb-4 text-zinc-100 text-xl">{category.title}</h3>
-        <p className="text-base text-zinc-400 leading-relaxed">{category.description}</p>
+        <h3 className="font-medium mb-2 text-zinc-100 text-base">{category.title}</h3>
+        <p className="text-sm text-zinc-400 leading-relaxed">{category.description}</p>
       </div>
     </div>
   );

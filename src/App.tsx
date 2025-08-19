@@ -1,3 +1,4 @@
+import Image from "@/components/CustomImage";
 import { Terminal } from "@/components/editor";
 import GradientText from "@/components/gradient-text";
 import Threads from "@/components/threads";
@@ -33,9 +34,9 @@ function App() {
 
         <ChevronDown className="absolute bottom-8 opacity-30 text-white h-10 w-10 animate-bounce" strokeWidth={1.5} />
       </div>
-      <section className="px-60 py-40 flex flex-row justify-between items-center overflow-x-hidden">
-        <div className="max-w-3xl">
-          <h1 className="text-4xl font-black text-white mb-8">Notre mission</h1>
+      <section className="px-60 py-60 flex flex-row justify-between items-center overflow-x-hidden">
+        <div className="max-w-2xl">
+          <h1 className="text-4xl font-bold text-white mb-8">Notre mission</h1>
           <p className="text-white/80 text-base mt-2 leading-loose">
             <BlogTag>CodeLab</BlogTag> forme la nouvelle génération de développeurs en cultivant l'autonomie, la créativité et l'
             <BlogTag>innovation</BlogTag>. Nous explorons l'<BlogTag>algorithmie</BlogTag>, la complexité temporelle, les
@@ -49,8 +50,8 @@ function App() {
           <Terminal />
         </div>
       </section>
-      <section className="px-60 py-16">
-        <h2 className="text-lg font-medium text-white mb-8">Notre programme :</h2>
+      <section className="px-60 py-16 pb-60">
+        <h1 className="text-4xl font-bold text-white mb-16">Notre programme</h1>
         <TechCategories />
       </section>
       <section className="px-60 py-16 pb-10">
@@ -61,22 +62,26 @@ function App() {
           <Threads amplitude={1} distance={0.1} />
         </div>
       </div>
-      <section className="px-60 py-16 text-white">
-        <h1 className="text-4xl font-black text-white mb-8">Contactez-nous</h1>
-        <p className="text-white/80 text-base mt-2 leading-loose">
-          Une question ? Une idée de projet ? Rejoignez-nous et participez à l'aventure CodeLab !
-        </p>
+      <section className="px-60 py-40 text-white flex flex-row justify-between items-center">
         <div>
-          <h2>Email</h2>
-          <p>contact@codelab.fr</p>
+          <h1 className="text-4xl font-black text-white mb-4">Contactez-nous</h1>
+          <p className="text-zinc-400 text-sm leading-loose">
+            Une question ? Une idée de projet ? Rejoignez-nous et participez à l'aventure CodeLab !
+          </p>
         </div>
         <div>
-          <h2>Adresse</h2>
-          <p>Lycée Descartes, Salle Info 2</p>
-        </div>
-        <div>
-          <h2>Horaires</h2>
-          <p>Mercredi 14h-16h, une semaine sur deux</p>
+          <div>
+            <h2>Email</h2>
+            <p>contact@codelab.fr</p>
+          </div>
+          <div>
+            <h2>Adresse</h2>
+            <p>Lycée Descartes, Salle Info 2</p>
+          </div>
+          <div>
+            <h2>Horaires</h2>
+            <p>Mercredi 14h-16h, une semaine sur deux</p>
+          </div>
         </div>
       </section>
       <Footer />
@@ -85,7 +90,7 @@ function App() {
 }
 
 function BlogTag({ children }: { children: React.ReactNode }) {
-  return <span className="tag-text relative">{children}</span>;
+  return <span className="font-bold">{children}</span>;
 }
 
 export default App;
@@ -154,7 +159,7 @@ function AppHeader() {
         <div className="absolute w-full dots bottom-2 left-0 h-0" />
       </div>
       <div className="absolute top-0 left-24 h-full flex items-center justify-center">
-        <img src="/codelab-logo.svg" className="w-8 h-8" />
+        <Image src="/codelab-logo.svg" className="w-8 h-8" />
         <span className="text-white ml-2 text-xl font-medium">CodeLab</span>
       </div>
       <div className="absolute top-0 right-24 h-full flex items-center justify-center">
@@ -206,8 +211,8 @@ function BeamsBackground() {
         scale={0.2}
         rotation={30}
       />
-      <img src="/pattern.svg" className="absolute -bottom-8 -right-9 w-[50%] opacity-50 pointer-events-none" />
-      <img src="/patternl.svg" className="absolute -bottom-8 -left-9 w-[50%] opacity-50 pointer-events-none" />
+      <Image src="/pattern.svg" className="absolute -bottom-8 -right-9 w-[50%] opacity-50 pointer-events-none" />
+      <Image src="/patternl.svg" className="absolute -bottom-8 -left-9 w-[50%] opacity-50 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-full h-56 bg-gradient-to-t from-zinc-950 to-zinc-950/0"></div>
       <div className="absolute top-0 left-0 w-full h-56 bg-gradient-to-b from-zinc-950 to-zinc-950/0"></div>
     </div>
@@ -257,7 +262,7 @@ function Footer() {
       <div className="flex flex-row justify-between">
         <div className="space-y-4 max-w-2xl">
           <div className="flex flex-row items-center justify-start gap-4">
-            <img src="/codelab-logo.svg" className="w-12 h-12" />
+            <Image src="/codelab-logo.svg" className="w-12 h-12" />
             <div className="space-y-1">
               <p className="text-xl font-medium text-left">CodeLab</p>
               <p className="text-sm text-zinc-400">Lycée Descartes</p>

@@ -330,3 +330,53 @@ body {
     transform: perspective(5000px) rotateY(-30deg) rotateX(18deg) translateY(0);
   }
 }
+
+.inner-glow-round {
+  box-shadow: inset -2px -2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.shiny-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  padding: 2px;
+  opacity: 0.2;
+  background: linear-gradient(to top left, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 1));
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  z-index: 50;
+}
+
+.shiny-glow {
+  position: relative;
+}
+
+.shiny-bg {
+  background: linear-gradient(to top left, rgba(255, 255, 255, 0.05) 20%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0.1) 90%, rgba(255, 255, 255, 0.05) 100%);
+}
+
+.shiny-bg-low {
+  text-shadow: 0 0 20px #61b0ff3e;
+}
+
+.shiny-glow-low::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  padding: 2px;
+  opacity: 0.1;
+  background: linear-gradient(to top left, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 1));
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  z-index: 50;
+}
+
+.shiny-glow-low {
+  position: relative;
+}

@@ -46,20 +46,20 @@ export function Terminal() {
 
   return (
     <div className="relative">
-      <div className="w-[600px] h-[320px] bg-zinc-800 rounded-lg border border-white/20 terminal-container">
+      <div className="w-[600px] h-[320px] bg-zinc-900/60 rounded-2xl overflow-hidden terminal-container shiny-glow-low backdrop-blur-sm shiny-bg-low">
         {/* Header */}
-        <div className="relative grid grid-cols-3 bg-zinc-700 py-2 px-4">
+        <div className="relative grid grid-cols-3 bg-zinc-950/60 py-2 px-4">
           <div className="flex gap-2 items-center">
-            <div className="w-3 h-3 rounded-full bg-red-500" />
-            <div className="w-3 h-3 rounded-full bg-yellow-500" />
-            <div className="w-3 h-3 rounded-full bg-green-500" />
+            <div className="w-3 h-3 rounded-full bg-red-500 inner-glow-round" />
+            <div className="w-3 h-3 rounded-full bg-yellow-500 inner-glow-round" />
+            <div className="w-3 h-3 rounded-full bg-green-500 inner-glow-round" />
           </div>
           <div className="text-white text-center">Playground</div>
         </div>
 
         {/* Body */}
         <div className="p-4">
-          <pre className="font-mono text-green-500 whitespace-pre-wrap ">
+          <pre className="font-mono text-blue-300 whitespace-pre-wrap ">
             {currentCode}
             {showCursor && "_"}
           </pre>
@@ -78,13 +78,13 @@ export function DotBackgroundDemo() {
           className={cn(
             "absolute inset-0",
             "[background-size:20px_20px]",
-            "[background-image:radial-gradient(#85b1ff_1px,transparent_1px)]"
+            "[background-image:radial-gradient(#85b4ff_1px,transparent_1px)]"
           )}
         />
         {/* Radial gradient for the container to give a faded look */}
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black_60%)] bg-zinc-950" />
       </div>
-      <div className="absolute h-[10rem] w-[10rem] bg-[#85b1ff] -z-50 bottom-0 right-8 blur-3xl"></div>
+      <div className="absolute h-[10rem] w-[10rem] bg-[#85b4ff]/50 -z-50 bottom-0 right-8 blur-3xl"></div>
     </>
   );
 }
