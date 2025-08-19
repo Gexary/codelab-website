@@ -2,7 +2,7 @@ export function TechCard({ category }: { category: Category }) {
   return (
     <div className="flex gap-8">
       <div className="w-22 h-22 rounded-md bg-white/5 border border-white/5 shrink-0 flex items-center justify-center">
-        <img src={category.icon} alt={category.title} className="w-[60%]" />
+        <img src={`/codelab-website/${category.icon}`} alt={category.title} className="w-[60%]" />
       </div>
       <div>
         <h3 className="font-medium mb-4 text-zinc-100 text-xl">{category.title}</h3>
