@@ -1,0 +1,22 @@
+Je suis en train de créer un site pour mon club d'informatique :
+CodeLab forme la nouvelle génération de développeurs en cultivant l'autonomie, la créativité et l'innovation. Nous explorons l'algorithmie, la complexité temporelle, les structures de données et les réseaux pour préparer aux métiers du futur comme le développement, la data science et la cybersécurité. Les membres acquièrent une véritable culture technique : se documenter, utiliser Git/GitHub, résoudre des problèmes et partager leurs connaissances, dans un esprit d'apprentissage collaboratif et d'innovation collective.
+
+J'ai un afficheur de mini ide, génére moi un code cool / jeu de mot, avec du code par exemple :
+
+while (vivant) {
+  print("CodeLab est le meilleur club")
+}
+
+Plusieurs chose pas que sur le club sa peut etre en général sur l'informatique
+
+Génére en moi 20, mais attention attention vraiment : le code ne doit pas faire plus que 58 char par ligne, et maximum 10 ligne,
+
+Génére en moi plusieurs sous format javascript, :
+const codes: string[] = []
+
+Code en js, python, c, sql, git
+Niveau simple
+Moyenne de ligne (tu peux dépasser ou faire moin) mais la moyenne est de 5 ligne
+sans emoji, langue en francais
+et aussi formatte le code, pour une belle indentation / espace etc etc, et un tab = 2 espace
+Renvoi directement le code sans parler
