@@ -10,7 +10,7 @@ export function MissionSection() {
         <div className="flex flex-row items-center justify-start gap-2 mb-6 relative">
           <h1 className="text-4xl font-bold text-white">Notre</h1>
           <RotatingText
-            texts={["mission"]} //, "vision", "approche", "expertise", "futur"]}
+            texts={["mission", "vision", "approche", "expertise", "futur"]}
             mainClassName="px-2 sm:px-2 md:px-3 bg-blue-600 text-4xl font-bold text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg transition-all duration-500 ease-in-out"
             staggerFrom={"last"}
             initial={{ y: "100%" }}
