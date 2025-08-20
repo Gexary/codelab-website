@@ -59,7 +59,7 @@ export function Terminal() {
 
         {/* Body */}
         <div className="p-4">
-          <pre className="font-mono text-blue-300 whitespace-pre-wrap ">
+          <pre className="font-mono text-blue-400 whitespace-pre-wrap ">
             {currentCode}
             {showCursor && "_"}
           </pre>
@@ -84,7 +84,7 @@ export function DotBackgroundDemo() {
         {/* Radial gradient for the container to give a faded look */}
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black_60%)] bg-zinc-950" />
       </div>
-      <div className="absolute h-[10rem] w-[10rem] bg-[#85b4ff]/50 -z-50 bottom-0 right-8 blur-3xl"></div>
+      <div className="absolute w-[20rem] h-[20rem] opacity-100 pointer-events-none -z-10 gradient-light-2 blur-3xl -bottom-20 -right-20" />
     </>
   );
 }

@@ -19,6 +19,7 @@
     "@radix-ui/react-slot": "^1.2.3",
     "@react-three/drei": "^10.7.3",
     "@react-three/fiber": "^9.3.0",
+    "@react-three/postprocessing": "^3.0.4",
     "@tailus/themer": "^0.1.8",
     "@tailwindcss/vite": "^4.1.12",
     "class-variance-authority": "^0.7.1",
@@ -28,11 +29,13 @@
     "gsap": "^3.13.0",
     "lucide-react": "^0.540.0",
     "lucide-vue-next": "^0.540.0",
+    "motion": "^12.23.12",
     "ogl": "^1.0.11",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "tailwind-merge": "^3.3.1",
-    "three": "^0.179.1"
+    "three": "^0.179.1",
+    "three-stdlib": "^2.36.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",

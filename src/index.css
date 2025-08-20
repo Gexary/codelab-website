@@ -120,11 +120,18 @@ body {
   background: #fff;
 }
 
+.inner-glow {
+  position: relative;
+  overflow: hidden;
+}
+
 .inner-glow::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   height: 2px;
   opacity: 100%;
@@ -379,4 +386,140 @@ body {
 
 .shiny-glow-low {
   position: relative;
+}
+
+.adsqgsd {
+  box-shadow: inset 0px 12px 28px -8px rgba(206, 206, 206, 0.2);
+  outline: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  outline-offset: 8px;
+  border-radius: 1rem;
+  position: relative;
+  opacity: 0.8;
+}
+
+.adsqgsd::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  padding: 2px;
+  opacity: 1;
+  background: linear-gradient(to top, transparent 20%, rgba(184, 184, 184, 0.2));
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  z-index: 50;
+}
+
+.shiny-separator {
+  width: 1px;
+  height: 80px;
+  opacity: 100%;
+  background: #fff;
+  opacity: 30%;
+  background: linear-gradient(to top, transparent 0%, #c9c9c9 20%, #c9c9c9 80%, transparent 100%);
+}
+
+.testsqqs {
+  background-color: #e5e5f7;
+  opacity: 0.8;
+  background-image:
+    linear-gradient(var(--color-zinc-800) 1px, transparent 1px),
+    linear-gradient(to right, var(--color-zinc-800) 1px, var(--color-zinc-950) 1px);
+  background-size: 20px 20px;
+  background-position: 10px;
+  position: relative;
+  animation: move-bg 1s linear infinite;
+}
+
+@keyframes move-bg {
+  0% {
+    background-position: 0px;
+  }
+
+  100% {
+    background-position: 20px;
+  }
+}
+
+
+.testsqqs::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -50;
+  background: linear-gradient(to left, transparent 0%, var(--color-zinc-950) 20%, var(--color-zinc-950) 80%, transparent 100%);
+}
+
+.rotate-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: perspective(5000px) rotateY(var(--rotateX)) rotateX(var(--rotateY));
+}
+
+.gradient-light {
+  background: #9ec8ff;
+  background: radial-gradient(circle, #9ec8ff 0%, #2b44ff 22%, rgba(17, 27, 120, 0.83) 58%, rgba(17, 27, 120, 0) 100%);
+  animation: light-pulse 10s ease infinite;
+}
+
+.gradient-light-2 {
+  background: #9ec8ff;
+  background: radial-gradient(circle, rgba(158, 200, 255, 1) 10%, rgba(43, 68, 255, 1) 22%, rgba(17, 27, 120, 0.83) 58%, rgba(17, 27, 120, 0) 100%);
+  animation: light-pulse 10s ease infinite;
+}
+
+@keyframes light-pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.qsdqsdqs {
+  box-shadow: inset 0 0 16px 16px var(--color-zinc-950);
+}
+
+.sqdqdsqsd::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 1px;
+  opacity: 100%;
+  background: #fff;
+  background: linear-gradient(to right, transparent 0%, var(--color-zinc-800) 20%, var(--color-zinc-800) 80%, transparent 100%);
+}
+
+.sqdqdsqsd::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 1px;
+  opacity: 100%;
+  background: #fff;
+  background: linear-gradient(to right, transparent 0%, var(--color-zinc-800) 20%, var(--color-zinc-800) 80%, transparent 100%);
 }

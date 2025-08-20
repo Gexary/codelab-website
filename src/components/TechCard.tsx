@@ -1,11 +1,11 @@
-import Image from "@/components/CustomImage";
+import Image from "@/components/app-ui/image";
 
 export function TechCard({ category }: { category: Category }) {
   return (
     <div className="flex gap-8">
-      <div className="w-22 h-22 rounded-2xl bg-white/5 shrink-0 flex items-center justify-center shiny-glow shiny-bg">
-        <Image src={category.icon} alt={category.title} className="w-[60%] -grayscale" />
-      </div>
+        <div className="w-22 h-22 rounded-2xl bg-white/5 shrink-0 flex items-center justify-center shiny-glow shiny-bg">
+          <Image src={category.icon} alt={category.title} className="w-[60%] -grayscale" />
+        </div>
       <div>
         <h3 className="font-medium mb-2 text-zinc-100 text-base">{category.title}</h3>
         <p className="text-sm text-zinc-400 leading-relaxed">{category.description}</p>
@@ -16,7 +16,7 @@ export function TechCard({ category }: { category: Category }) {
 
 export function TechCategories() {
   return (
-    <div className="grid grid-cols-2 gap-16">
+    <div className="grid gap-16 md:grid-cols-1 lg:grid-cols-2">
       {Categories.map((category) => (
         <TechCard category={category} />
       ))}
