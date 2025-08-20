@@ -1,3 +1,4 @@
+import { NeonWireframeShape } from "@/components/neon-shape";
 import { cn } from "@/lib/utils";
 import { terminalCodes } from "@/terminal-codes";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -66,6 +67,28 @@ export function Terminal() {
         </div>
       </div>
       <DotBackgroundDemo />
+      <div className="absolute -top-32 -left-42">
+        <NeonWireframeShape
+          speed={0.5}
+          shape="pyramid"
+          colors={["#2b44ff", "#5ca8ff"]}
+          glowIntensity={0.8}
+          borderThickness={2}
+          width={250}
+          height={250}
+        />
+      </div>
+      <div className="absolute -bottom-20 -right-36">
+        <NeonWireframeShape
+          speed={0.5}
+          shape="cube"
+          colors={["#5ca8ff", "#8fc8ff"]}
+          glowIntensity={0.8}
+          borderThickness={2}
+          width={200}
+          height={200}
+        />
+      </div>
     </div>
   );
 }

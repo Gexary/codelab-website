@@ -1,26 +1,36 @@
 import { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
-import { LineGeometry } from "three/examples/jsm/lines/LineGeometry.js";
+import { LineSegmentsGeometry } from "three-stdlib";
 import { LineMaterial } from "three/examples/jsm/lines/LineMaterial.js";
 import { LineSegments2 } from "three/examples/jsm/lines/LineSegments2.js";
 
-const NeonWireframeShape = ({
+interface NeonWireframeShapeProps {
+  speed?: number;
+  shape?: "pyramid" | "cube";
+  colors?: string[];
+  glowIntensity?: number;
+  borderThickness?: number;
+  width?: number;
+  height?: number;
+}
+
+export const NeonWireframeShape = ({
   speed = 1,
   shape = "cube",
   colors = ["#f00", "#0f0", "#00f"],
   glowIntensity = 0.5,
   borderThickness = 2,
-}) => {
+  width = 500,
+  height = 500,
+}: NeonWireframeShapeProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>(null);
 
   const geometry = useMemo(() => {
     if (shape === "pyramid") {
-      return new THREE.ConeGeometry(1, 1.5, 4);
-    } else if (shape === "icosahedron") {
-      return new THREE.IcosahedronGeometry(1, 0);
+      return new THREE.ConeGeometry(1.5, 2.5, 4);
     } else {
-      return new THREE.BoxGeometry(1.5, 1.5, 1.5);
+      return new THREE.BoxGeometry(2, 2, 2);
     }
   }, [shape]);
 
@@ -35,7 +45,7 @@ const NeonWireframeShape = ({
       antialias: true,
       alpha: true,
     });
-    renderer.setSize(200, 200);
+    renderer.setSize(width, height);
     renderer.setClearColor(0x000000, 0);
 
     const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
@@ -44,18 +54,14 @@ const NeonWireframeShape = ({
 
     const edges = new THREE.EdgesGeometry(geometry);
 
-    const positions: number[] = [];
-    const posAttr = edges.attributes.position;
-    for (let i = 0; i < posAttr.count; i++) {
-      positions.push(posAttr.getX(i), posAttr.getY(i), posAttr.getZ(i));
-    }
-    const lineGeometry = new LineGeometry();
+    const positions = Array.from(edges.attributes.position.array as Iterable<number>);
+    const lineGeometry = new LineSegmentsGeometry();
     lineGeometry.setPositions(positions);
 
     const edgeMaterial = new LineMaterial({
       color: new THREE.Color(colors[0]),
       linewidth: borderThickness,
-      resolution: new THREE.Vector2(200, 200),
+      resolution: new THREE.Vector2(width, height),
       transparent: true,
       opacity: 1.0,
     });
@@ -105,69 +111,7 @@ const NeonWireframeShape = ({
 
   return (
     <div style={{ display: "inline-block", margin: "10px" }}>
-      <canvas ref={canvasRef} width={200} height={200} />
+      <canvas ref={canvasRef} width={width} height={height} />
     </div>
   );
 };
-
-// Exemple d'utilisation avec différentes configurations et arrière-plan
-const AppNeon = () => {
-  return (
-    <div
-      style={{
-        padding: "20px",
-        background: "linear-gradient(135deg, #1a1a2e, #16213e, #0f3460)",
-        minHeight: "100vh",
-        display: "flex",
-        flexWrap: "wrap",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "20px",
-        position: "relative",
-      }}
-    >
-      {/* Formes 3D avec fond transparent */}
-      <div style={{ position: "relative", zIndex: 2 }}>
-        <NeonWireframeShape
-          speed={1}
-          shape="cube"
-          colors={["#ff0066", "#00ff66", "#6600ff"]}
-          glowIntensity={0.8}
-          borderThickness={5}
-        />
-      </div>
-
-      <div style={{ position: "relative", zIndex: 2 }}>
-        <NeonWireframeShape
-          speed={0.5}
-          shape="pyramid"
-          colors={["#ff6600", "#ffff00", "#00ffff"]}
-          glowIntensity={1.2}
-          borderThickness={1}
-        />
-      </div>
-
-      <div style={{ position: "relative", zIndex: 2 }}>
-        <NeonWireframeShape
-          speed={1.2}
-          shape="icosahedron"
-          colors={["#00ffff", "#ff00ff", "#ffff00"]}
-          glowIntensity={1.0}
-          borderThickness={2}
-        />
-      </div>
-
-      <div style={{ position: "relative", zIndex: 2 }}>
-        <NeonWireframeShape
-          speed={2}
-          shape="cube"
-          colors={["#ff0000", "#ffffff", "#0000ff"]}
-          glowIntensity={0.6}
-          borderThickness={2}
-        />
-      </div>
-    </div>
-  );
-};
-
-export default AppNeon;
