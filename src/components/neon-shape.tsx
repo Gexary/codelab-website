@@ -133,7 +133,6 @@ const AppNeon = () => {
           shape="cube"
           colors={["#ff0066", "#00ff66", "#6600ff"]}
           glowIntensity={0.8}
-          glowSpeed={1.5}
           borderThickness={5}
         />
       </div>
@@ -144,7 +143,6 @@ const AppNeon = () => {
           shape="pyramid"
           colors={["#ff6600", "#ffff00", "#00ffff"]}
           glowIntensity={1.2}
-          glowSpeed={0.8}
           borderThickness={1}
         />
       </div>
@@ -155,7 +153,6 @@ const AppNeon = () => {
           shape="icosahedron"
           colors={["#00ffff", "#ff00ff", "#ffff00"]}
           glowIntensity={1.0}
-          glowSpeed={1.2}
           borderThickness={2}
         />
       </div>
@@ -166,7 +163,6 @@ const AppNeon = () => {
           shape="cube"
           colors={["#ff0000", "#ffffff", "#0000ff"]}
           glowIntensity={0.6}
-          glowSpeed={2}
           borderThickness={2}
         />
       </div>
