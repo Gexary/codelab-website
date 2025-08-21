@@ -1,1 +1,1 @@
-export const BASE_URL = "/codelab-website";
+export const BASE_URL = "";
