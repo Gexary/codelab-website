@@ -1,11 +1,12 @@
 import Image from "@/components/app-ui/image";
 import GradientText from "@/components/app-ui/style/gradient-text";
+import { Section } from "@/components/app-ui/style/section";
 import { MapPin } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="px-60 py-16 text-zinc-200 border-t border-zinc-800 bg-zinc-950/75 backdrop-blur-md">
-      <div className="flex flex-row justify-between">
+    <Section element="footer" className="py-16 text-zinc-200 border-t border-zinc-800 bg-zinc-950/75 backdrop-blur-md">
+      <div className="flex flex-row justify-between gap-8 flex-wrap">
         <div className="space-y-4 max-w-2xl">
           <div className="flex flex-row items-center justify-start gap-4">
             <Image src="/codelab-logo.svg" className="w-12 h-12" />
@@ -19,29 +20,16 @@ export function Footer() {
             technologiques dans un environnement collaboratif et passionnant.
           </p>
         </div>
-        <div className="flex flex-row gap-32">
-          {footerLinks.map((link) => (
-            <div>
-              <GradientText className="text-base font-medium mb-4">{link.name}</GradientText>
-              <ul className="flex flex-col gap-2 text-sm text-zinc-400">
-                {link.links.map((link) => (
-                  <li>
-                    <a href={link.href}>{link.name}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+        <FooterLinks />
       </div>
 
-      <div className="flex justify-between items-center gap-4 inner-glow-1 pt-8 mt-8 relative">
+      <div className="flex justify-between items-center gap-4 inner-glow-1 pt-8 mt-8 relative flex-wrap">
         <p className="text-sm text-zinc-400 flex flex-row items-center gap-2">
           <MapPin className="inline-block w-4 h-4" /> Lycée Descartes - Club CodeLab
         </p>
         <p className="text-sm text-zinc-400">© 2024 CodeLab. Créé avec passion par les étudiants.</p>
       </div>
-    </footer>
+    </Section>
   );
 }
 
@@ -114,3 +102,22 @@ const footerLinks = [
     ],
   },
 ];
+
+function FooterLinks() {
+  return (
+    <div className="flex flex-row lg:gap-32 md:gap-16 max-md:justify-between max-md:w-full">
+      {footerLinks.map((link) => (
+        <div>
+          <GradientText className="text-base font-medium mb-4">{link.name}</GradientText>
+          <ul className="flex flex-col gap-2 text-sm text-zinc-400">
+            {link.links.map((link) => (
+              <li>
+                <a href={link.href}>{link.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}

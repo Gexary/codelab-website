@@ -1,9 +1,13 @@
 import Image from "@/components/app-ui/image";
+import { Section } from "@/components/app-ui/style/section";
 import { Clock, Mail, MapPin, type LucideIcon } from "lucide-react";
 
 export function ContactSection() {
   return (
-    <section className="px-60 py-40 pb-20 text-white flex flex-row justify-between items-center relative overflow">
+    <Section
+      className="py-40 pb-20 text-white relative"
+      rootClassName="flex flex-row justify-between items-center flex-wrap gap-y-16"
+    >
       <div>
         <h1 className="text-4xl font-black text-white mb-4">Contactez-nous</h1>
         <p className="text-zinc-400 text-sm leading-loose">
@@ -14,7 +18,7 @@ export function ContactSection() {
       <Image src="/pattern.svg" className="absolute -bottom-8 -right-9 w-[50%] opacity-20 pointer-events-none -z-10" />
       <div className="absolute -bottom-[25rem] -left-[25rem] w-[50%] h-[50rem] opacity-100 pointer-events-none -z-10 gradient-light blur-3xl" />
       <Image src="/patternl.svg" className="absolute -bottom-8 -left-9 w-[50%] opacity-50 pointer-events-none -z-10" />
-    </section>
+    </Section>
   );
 }
 
@@ -44,7 +48,7 @@ const contacts: ContactProps[] = [
 
 function ContactList() {
   return (
-    <div className="flex flex-col gap-8 min-w-xl">
+    <div className="flex flex-col gap-8 min-w-xl max-ld:w-full">
       {contacts.map((contact, i) => (
         <div className="flex flex-row gap-8 items-center adsqgsd py-4 px-8 backdrop-blur-md">
           <div className="w-16 h-16 rounded-full bg-white/5 shrink-0 flex items-center justify-center shiny-glow shiny-bg after:rounded-full! before:rounded-full!">

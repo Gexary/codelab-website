@@ -40,7 +40,7 @@ const stats: StatsProps[] = [
 
 function AppStats() {
   return (
-    <div className="flex flex-row justify-center items-center gap-32">
+    <div className="flex flex-row justify-center items-center gap-32 px-16 flex-wrap">
       {stats.map((stat) => (
         <div className="flex flex-col items-center justify-center gap-4">
           <GradientText className="text-6xl font-bold block text-center">

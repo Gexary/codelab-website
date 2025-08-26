@@ -5,8 +5,11 @@ import { Terminal } from "@/components/app-ui/terminal";
 
 export function MissionSection() {
   return (
-    <Section className="py-60 flex flex-row max-sm:flex-col justify-between items-center overflow-x-hidden">
-      <div className="max-w-2xl">
+    <Section
+      className="py-60 overflow-x-hidden"
+      rootClassName="flex flex-row max-sm:flex-col justify-between items-center max-ld:flex-wrap gap-y-16"
+    >
+      <div className="2xl:max-w-2xl max-w-xl">
         <div className="flex flex-row items-center justify-start gap-2 mb-6 relative">
           <h1 className="text-4xl font-bold text-white">Notre</h1>
           <RotatingText

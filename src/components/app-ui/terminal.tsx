@@ -46,7 +46,7 @@ export function Terminal() {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative md:scale-75 lg:scale-80 2xl:scale-100">
       <div className="w-[600px] h-[320px] bg-zinc-900/60 rounded-2xl overflow-hidden terminal-container shiny-glow-low backdrop-blur-sm shiny-bg-low">
         {/* Header */}
         <div className="relative grid grid-cols-3 bg-zinc-950/60 py-2 px-4">
