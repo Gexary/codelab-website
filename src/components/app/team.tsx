@@ -1,46 +1,26 @@
+import { useAppData } from "@/context/AppData";
 import "./team.css";
-
-const members = [
-  {
-    name: "Benchekroun Belabbes Othmane",
-    role: "Co-fondateur",
-    activity: "Ancien dirigeant de 2023-2025",
-  },
-  {
-    name: "Aboulal Ghali",
-    role: "Co-fondateur",
-    activity: "Membre actif depuis 2023",
-  },
-  {
-    name: "Mounjid Mehdi",
-    role: "Co-fondateur",
-    activity: "Membre actif depuis 2023",
-  },
-  {
-    name: "Arkha Mohamed reda",
-    role: "Dirigeant",
-    activity: "Membre actif depuis 2024",
-  },
-];
-export function TeamSection() {
-  return (
-    <section className="py-8 relative gradient-separator">
-      <div className="w-full py-8 text-white flex flex-col items-center justify-center gap-8 vignette sliding-bg">
-        <h1 className="text-4xl font-black mb-4 text-center">Notre équipe</h1>
-        <div className="flex flex-row gap-4 gap-y-16 items-start flex-wrap content-center justify-center md:mx-20 sm:mx-10">
-          {members.map((member) => (
-            <TeamMember key={member.name} {...member} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 interface TeamMemberProps {
   name: string;
   role: string;
   activity: string;
+}
+
+export function TeamSection() {
+  const { data } = useAppData();
+  const members = data ? (data.team as TeamMemberProps[]) : null;
+
+  return (
+    <section className="py-8 relative gradient-separator" id="team">
+      <div className="w-full py-8 text-white flex flex-col items-center justify-center gap-8 vignette sliding-bg">
+        <h1 className="text-4xl font-black mb-4 text-center">Notre équipe</h1>
+        <div className="flex flex-row gap-4 gap-y-16 items-start flex-wrap content-center justify-center md:mx-20 sm:mx-10">
+          {members ? members.map((member) => <TeamMember key={member.name} {...member} />) : null}
+        </div>
+      </div>
+    </section>
+  );
 }
 
 const TeamMember: React.FC<TeamMemberProps> = ({ name, role, activity }) => {

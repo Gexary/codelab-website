@@ -17,8 +17,8 @@ export function TechCard({ category }: { category: Category }) {
 export function TechCategories() {
   return (
     <div className="grid gap-16 md:grid-cols-1 lg:grid-cols-2">
-      {Categories.map((category) => (
-        <TechCard category={category} />
+      {Categories.map((category, i) => (
+        <TechCard category={category} key={i} />
       ))}
     </div>
   );

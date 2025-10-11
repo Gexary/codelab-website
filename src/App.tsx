@@ -6,10 +6,11 @@ import { ProgramSection } from "@/components/app/program";
 import { StatsSection } from "@/components/app/stats";
 import { TeamSection } from "@/components/app/team";
 import Threads from "@/components/threads";
+import { AppDataProvider } from "@/context/AppData";
 
 function App() {
   return (
-    <>
+    <AppDataProvider>
       <Header />
       <MissionSection />
       <ProgramSection />
@@ -22,7 +23,7 @@ function App() {
       </div>
       <ContactSection />
       <Footer />
-    </>
+    </AppDataProvider>
   );
 }
 

@@ -1,6 +1,7 @@
 import CountUp from "@/components/app-ui/style/count-up";
 import GradientText from "@/components/app-ui/style/gradient-text";
 import { Section } from "@/components/app-ui/style/section";
+import { useAppData } from "@/context/AppData";
 
 export function StatsSection() {
   return (
@@ -17,28 +18,12 @@ interface StatsProps {
   startValue?: number;
 }
 
-const stats: StatsProps[] = [
-  {
-    title: "Dirigeants Passionnés",
-    value: 3,
-  },
-  {
-    title: "Étudiants Uniques",
-    value: 50,
-    suffix: "+",
-  },
-  {
-    title: "Projets Réalisés",
-    value: 15,
-  },
-  {
-    title: "Heures de formation",
-    value: 100,
-    suffix: "+",
-  },
-];
-
 function AppStats() {
+  const { data } = useAppData();
+  if (!data) return null;
+
+  const stats = data.stats as StatsProps[];
+
   return (
     <div className="flex flex-row justify-center items-center gap-32 px-16 flex-wrap">
       {stats.map((stat) => (

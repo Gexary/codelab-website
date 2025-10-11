@@ -9,7 +9,28 @@ import { ArrowRight, ChevronDown, GraduationCap } from "lucide-react";
 function AppTopHeader() {
   return (
     <div className="absolute top-16 w-full">
-      <NavBar />
+      <NavBar links={[
+        {
+          scrollId: "home",
+          name: "Accueil",
+        },
+        {
+          scrollId: "about",
+          name: "À propos",
+        },
+        {
+          scrollId: "team",
+          name: "Notre équipe",
+        },
+        {
+          href: "program",
+          name: "Nos projets",
+        },
+        {
+          scrollId: "contact",
+          name: "Contact",
+        },
+      ]} />
       <div className="absolute top-0 left-24 h-full flex items-center justify-center">
         <Image src="/codelab-logo.svg" className="w-8 h-8" />
         <span className="text-white ml-2 text-xl font-medium">CodeLab</span>
@@ -73,7 +94,7 @@ function BeamsBackground() {
 
 export function Header() {
   return (
-    <div className="w-full h-screen overflow-hidden relative flex flex-col justify-center items-center">
+    <div className="w-full h-screen overflow-hidden relative flex flex-col justify-center items-center" id="home">
       <BeamsBackground />
 
       {/* App Header */}

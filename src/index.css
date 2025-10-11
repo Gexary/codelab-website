@@ -388,22 +388,23 @@ body {
   position: relative;
 }
 
-.adsqgsd {
+.contact-card {
   box-shadow: inset 0px 12px 28px -8px rgba(206, 206, 206, 0.2);
   outline: 1px solid rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* border: 1px solid rgba(255, 255, 255, 0.1); */
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0px 12px 28px -8px rgba(206, 206, 206, 0.2);
   outline-offset: 8px;
   border-radius: 1rem;
   position: relative;
   opacity: 0.8;
 }
 
-.adsqgsd::before {
+.contact-card::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 1rem;
-  padding: 2px;
+  padding: 1.5px;
   opacity: 1;
   background: linear-gradient(to top, transparent 20%, rgba(184, 184, 184, 0.2));
   mask:
@@ -455,4 +456,25 @@ body {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+.hover-animation {
+  position: relative;
+}
+
+.hover-animation::before {
+  content: "";
+  position: absolute;
+  height: 1.5px;
+  width: 0;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 150ms ease-in-out;
+}
+
+.hover-animation:hover::before {
+  width: calc(100% - 32px);
 }

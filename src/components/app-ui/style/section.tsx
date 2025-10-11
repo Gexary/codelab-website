@@ -6,10 +6,13 @@ export function Section({
   className,
   rootClassName,
   element = "section",
-}: React.PropsWithChildren<{ className?: string; element?: React.ElementType; rootClassName?: string }>) {
+  id,
+}: React.PropsWithChildren<{ className?: string; element?: React.ElementType; rootClassName?: string; id?: string }>) {
   return createElement(
     element,
     { className: cn("2xl:px-60 xl:px-30 lg:px-20 max-lg:px-16", className) },
-    <div className={cn("max-w-[100rem] 2xl:mx-auto w-full h-full", rootClassName)}>{children}</div>
+    <div className={cn("max-w-[100rem] 2xl:mx-auto w-full h-full", rootClassName)} id={id}>
+      {children}
+    </div>
   );
 }
