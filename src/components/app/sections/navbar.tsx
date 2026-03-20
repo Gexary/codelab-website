@@ -7,7 +7,13 @@ export interface NavLinkProps {
 export function NavBar({ links }: { links: NavLinkProps[] }) {
   const scrollTo = (id: string) => {
     const element = document.getElementById(id);
-    if (element) element.scrollIntoView({ behavior: "smooth" });
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "nearest",
+      });
+    }
   };
 
   return (

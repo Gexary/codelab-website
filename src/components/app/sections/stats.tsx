@@ -1,6 +1,6 @@
-import CountUp from "@/components/app-ui/style/count-up";
-import GradientText from "@/components/app-ui/style/gradient-text";
-import { Section } from "@/components/app-ui/style/section";
+import CountUp from "@/components/utils/count-up";
+import GradientText from "@/components/utils/gradient-text";
+import { Section } from "@/components/utils/section";
 import { useAppData } from "@/context/AppData";
 
 export function StatsSection() {

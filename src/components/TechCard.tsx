@@ -1,11 +1,54 @@
-import Image from "@/components/app-ui/image";
+import Image from "@/components/utils/image";
+
+interface Category {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+const categories: Category[] = [
+  {
+    title: "Programmation en Python et POO",
+    description:
+      "Apprenez à coder vos premiers programmes en partant de zéro, à automatiser des tâches simples et à développer vos propres petits projets. Python est un langage clair et polyvalent, parfait pour débuter.",
+    icon: "/assets/program/python_logo.svg",
+  },
+  {
+    title: "Algorithmie",
+    description:
+      "Découvrez comment résoudre des problèmes en découpant vos idées en étapes logiques. De la recherche d'un chemin à l'optimisation d'un calcul, vous verrez comment raisonner comme un informaticien.",
+    icon: "/assets/program/algo_icon.png",
+  },
+  {
+    title: "Structures de données",
+    description: "Listes, piles, files, dictionnaires, arbres… Apprenez à organiser les informations pour les manipuler plus efficacement, comme le font les vrais logiciels.",
+    icon: "/assets/program/graph.png",
+  },
+  {
+    title: "Bases de données et SQL",
+    description:
+      "Explorez le monde des données : créez vos propres bases, interrogez-les avec SQL, et comprenez comment sont stockées les informations derrière vos applis préférées.",
+    icon: "/assets/program/database_icon.png",
+  },
+  {
+    title: "Architecture et systèmes d'exploitation",
+    description:
+      "Que se passe-t-il dans un ordinateur quand vous lancez un programme ? Découvrez les bases de l'architecture matérielle, de la mémoire et du fonctionnement d'un système d'exploitation.",
+    icon: "/assets/program/linux_logo.svg",
+  },
+  {
+    title: "Réseaux et Web",
+    description: "Plongez dans l'univers d'Internet : comment les ordinateurs communiquent, comment fonctionnent les sites web, et comment créer vos premières pages interactives.",
+    icon: "/assets/program/web_icon.png",
+  },
+];
 
 export function TechCard({ category }: { category: Category }) {
   return (
     <div className="flex gap-8">
-        <div className="w-22 h-22 rounded-2xl bg-white/5 shrink-0 flex items-center justify-center shiny-glow shiny-bg">
-          <Image src={category.icon} alt={category.title} className="w-[60%] -grayscale" />
-        </div>
+      <div className="w-22 h-22 rounded-2xl bg-white/5 shrink-0 flex items-center justify-center shiny-glow shiny-bg">
+        <Image src={category.icon} alt={category.title} className="w-[60%] -grayscale" />
+      </div>
       <div>
         <h3 className="font-medium mb-2 text-zinc-100 text-base">{category.title}</h3>
         <p className="text-sm text-zinc-400 leading-relaxed">{category.description}</p>
@@ -17,54 +60,9 @@ export function TechCard({ category }: { category: Category }) {
 export function TechCategories() {
   return (
     <div className="grid gap-16 md:grid-cols-1 lg:grid-cols-2">
-      {Categories.map((category, i) => (
+      {categories.map((category, i) => (
         <TechCard category={category} key={i} />
       ))}
     </div>
   );
 }
-
-interface Category {
-  title: string;
-  description: string;
-  icon: string;
-}
-
-const Categories = [
-  {
-    title: "Programmation en Python et POO",
-    description:
-      "Apprenez à coder vos premiers programmes en partant de zéro, à automatiser des tâches simples et à développer vos propres petits projets. Python est un langage clair et polyvalent, parfait pour débuter.",
-    icon: "/python-logo.svg",
-  },
-  {
-    title: "Algorithmie",
-    description:
-      "Découvrez comment résoudre des problèmes en découpant vos idées en étapes logiques. De la recherche d'un chemin à l'optimisation d'un calcul, vous verrez comment raisonner comme un informaticien.",
-    icon: "/algo-icon.png",
-  },
-  {
-    title: "Structures de données",
-    description:
-      "Listes, piles, files, dictionnaires, arbres… Apprenez à organiser les informations pour les manipuler plus efficacement, comme le font les vrais logiciels.",
-    icon: "/graph.png",
-  },
-  {
-    title: "Bases de données et SQL",
-    description:
-      "Explorez le monde des données : créez vos propres bases, interrogez-les avec SQL, et comprenez comment sont stockées les informations derrière vos applis préférées.",
-    icon: "/database-icon.png",
-  },
-  {
-    title: "Architecture et systèmes d'exploitation",
-    description:
-      "Que se passe-t-il dans un ordinateur quand vous lancez un programme ? Découvrez les bases de l'architecture matérielle, de la mémoire et du fonctionnement d'un système d'exploitation.",
-    icon: "/linux-logo.svg",
-  },
-  {
-    title: "Réseaux et Web",
-    description:
-      "Plongez dans l'univers d'Internet : comment les ordinateurs communiquent, comment fonctionnent les sites web, et comment créer vos premières pages interactives.",
-    icon: "/web-icon.png",
-  },
-];

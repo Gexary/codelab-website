@@ -1,6 +1,6 @@
-import Image from "@/components/app-ui/image";
-import GradientText from "@/components/app-ui/style/gradient-text";
-import { Section } from "@/components/app-ui/style/section";
+import Image from "@/components/utils/image";
+import GradientText from "@/components/utils/gradient-text";
+import { Section } from "@/components/utils/section";
 import { MapPin } from "lucide-react";
 
 export function Footer() {
@@ -9,7 +9,7 @@ export function Footer() {
       <div className="flex flex-row justify-between gap-8 flex-wrap">
         <div className="space-y-4 max-w-2xl">
           <div className="flex flex-row items-center justify-start gap-4">
-            <Image src="/codelab-logo.svg" className="w-12 h-12" />
+            <Image src="/assets/codelab_logo.svg" className="w-12 h-12" />
             <div className="space-y-1">
               <p className="text-xl font-medium text-left">CodeLab</p>
               <p className="text-sm text-zinc-400">Lycée Descartes</p>

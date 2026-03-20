@@ -1,25 +1,19 @@
-import Image from "@/components/app-ui/image";
-import { Section } from "@/components/app-ui/style/section";
+import Image from "@/components/utils/image";
+import { Section } from "@/components/utils/section";
 import { useAppData } from "@/context/AppData";
 import { Clock, Mail, MapPin, type LucideIcon } from "lucide-react";
 
 export function ContactSection() {
   return (
-    <Section
-      className="py-40 pb-20 text-white relative"
-      rootClassName="flex flex-row justify-between items-center flex-wrap gap-y-16"
-      id="contact"
-    >
+    <Section className="py-40 pb-20 text-white relative" rootClassName="flex flex-row justify-between items-center flex-wrap gap-y-16" id="contact">
       <div>
         <h1 className="text-4xl font-black text-white mb-4">Contactez-nous</h1>
-        <p className="text-zinc-400 text-sm leading-loose">
-          Une question ? Une idée de projet ? Rejoignez-nous et participez à l'aventure CodeLab !
-        </p>
+        <p className="text-zinc-400 text-sm leading-loose">Une question ? Une idée de projet ? Rejoignez-nous et participez à l'aventure CodeLab !</p>
       </div>
       <ContactList />
-      <Image src="/pattern.svg" className="absolute -bottom-8 -right-9 w-[50%] opacity-20 pointer-events-none -z-10" />
+      <Image src="/assets/pattern_r.svg" className="absolute -bottom-8 -right-9 w-[50%] opacity-20 pointer-events-none -z-10" />
       <div className="absolute -bottom-[25rem] -left-[25rem] w-[50%] h-[50rem] opacity-100 pointer-events-none -z-10 gradient-light blur-3xl" />
-      <Image src="/patternl.svg" className="absolute -bottom-8 -left-9 w-[50%] opacity-50 pointer-events-none -z-10" />
+      <Image src="/assets/pattern_l.svg" className="absolute -bottom-8 -left-9 w-[50%] opacity-50 pointer-events-none -z-10" />
     </Section>
   );
 }

@@ -1,10 +1,10 @@
-import { ContactSection } from "@/components/app/contact";
-import { Footer } from "@/components/app/footer";
-import { Header } from "@/components/app/header";
-import { MissionSection } from "@/components/app/mission";
-import { ProgramSection } from "@/components/app/program";
-import { StatsSection } from "@/components/app/stats";
-import { TeamSection } from "@/components/app/team";
+import { ContactSection } from "@/components/app/sections/contact";
+import { Footer } from "@/components/app/sections/footer";
+import { Header } from "@/components/app/sections/header";
+import { MissionSection } from "@/components/app/sections/mission";
+import { ProgramSection } from "@/components/app/sections/program";
+import { StatsSection } from "@/components/app/sections/stats";
+import { TeamSection } from "@/components/app/sections/team";
 import Threads from "@/components/threads";
 import { AppDataProvider } from "@/context/AppData";
 

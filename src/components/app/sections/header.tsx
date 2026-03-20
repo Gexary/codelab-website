@@ -1,42 +1,44 @@
-import Image from "@/components/app-ui/image";
-import { MainButton } from "@/components/app-ui/style/main-button";
-import { GlowLineEffect } from "@/components/app-ui/style/utils";
-import { NavBar } from "@/components/app/navbar";
+import Image from "@/components/utils/image";
+import { MainButton } from "@/components/app/main-button";
+import { GlowLineEffect } from "@/components/app/utils";
+import { NavBar } from "@/components/app/sections/navbar";
 import Beams from "@/components/beams";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown, GraduationCap } from "lucide-react";
 
+const navLinks = [
+  {
+    scrollId: "home",
+    name: "Accueil",
+  },
+  {
+    scrollId: "about",
+    name: "À propos",
+  },
+  {
+    scrollId: "team",
+    name: "Notre équipe",
+  },
+  {
+    href: "program",
+    name: "Nos projets",
+  },
+  {
+    scrollId: "contact",
+    name: "Contact",
+  },
+];
+
 function AppTopHeader() {
   return (
     <div className="absolute top-16 w-full">
-      <NavBar links={[
-        {
-          scrollId: "home",
-          name: "Accueil",
-        },
-        {
-          scrollId: "about",
-          name: "À propos",
-        },
-        {
-          scrollId: "team",
-          name: "Notre équipe",
-        },
-        {
-          href: "program",
-          name: "Nos projets",
-        },
-        {
-          scrollId: "contact",
-          name: "Contact",
-        },
-      ]} />
+      <NavBar links={navLinks} />
       <div className="absolute top-0 left-24 h-full flex items-center justify-center">
-        <Image src="/codelab-logo.svg" className="w-8 h-8" />
+        <Image src="/assets/codelab_logo.svg" className="w-8 h-8" />
         <span className="text-white ml-2 text-xl font-medium">CodeLab</span>
       </div>
       <div className="absolute top-0 right-24 h-full flex items-center justify-center">
-        <Button>Se connecter</Button>
+        <Button className="cursor-pointer">Se connecter</Button>
       </div>
     </div>
   );
@@ -50,9 +52,7 @@ function AppStart() {
         Club du Lycée Descartes • Depuis 2023
       </div>
       <div className="flex flex-col items-center justify-center mb-8">
-        <h1 className="text-[5rem] font-black text-center text-transparent bg-clip-text bg-[linear-gradient(to_top,_rgba(0,0,0,0.5),_#fff_50%)]">
-          CodeLab
-        </h1>
+        <h1 className="text-[5rem] font-black text-center text-transparent bg-clip-text bg-[linear-gradient(to_top,_rgba(0,0,0,0.5),_#fff_50%)]">CodeLab</h1>
         <GlowLineEffect className="-mt-4" />
       </div>
       <p className="text-center text-zinc-300 text-base mt-2 w-lg">
@@ -74,18 +74,9 @@ function AppStart() {
 function BeamsBackground() {
   return (
     <div className="absolute top-0 left-0 w-full h-full -z-10">
-      <Beams
-        beamWidth={2}
-        beamHeight={30}
-        beamNumber={20}
-        lightColor="#85b1ff"
-        speed={2}
-        noiseIntensity={1.75}
-        scale={0.2}
-        rotation={30}
-      />
-      <Image src="/pattern.svg" className="absolute -bottom-8 -right-9 w-[50%] opacity-50 pointer-events-none" />
-      <Image src="/patternl.svg" className="absolute -bottom-8 -left-9 w-[50%] opacity-50 pointer-events-none" />
+      <Beams beamWidth={2} beamHeight={30} beamNumber={20} lightColor="#85b1ff" speed={2} noiseIntensity={1.75} scale={0.2} rotation={30} />
+      <Image src="/assets/pattern_r.svg" className="absolute -bottom-8 -right-9 w-[50%] opacity-50 pointer-events-none select-none" />
+      <Image src="/assets/pattern_l.svg" className="absolute -bottom-8 -left-9 w-[50%] opacity-50 pointer-events-none select-none" />
       <div className="absolute bottom-0 left-0 w-full h-56 bg-gradient-to-t from-zinc-950 to-zinc-950/0"></div>
       <div className="absolute top-0 left-0 w-full h-56 bg-gradient-to-b from-zinc-950 to-zinc-950/0"></div>
     </div>

@@ -1,4 +1,4 @@
-import { Section } from "@/components/app-ui/style/section";
+import { Section } from "@/components/utils/section";
 import { TechCategories } from "@/components/TechCard";
 
 export function ProgramSection() {

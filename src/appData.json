@@ -1,0 +1,51 @@
+{
+  "stats": [
+    {
+      "title": "Dirigeants Passionnés",
+      "value": 3
+    },
+    {
+      "title": "Étudiants Uniques",
+      "value": 50,
+      "suffix": "+"
+    },
+    {
+      "title": "Projets Réalisés",
+      "value": 15
+    },
+    {
+      "title": "Heures de formation",
+      "value": 100,
+      "suffix": "+"
+    }
+  ],
+
+  "team": [
+    {
+      "name": "Benchekroun Belabbes Othmane",
+      "role": "Co-fondateur",
+      "activity": "Ancien dirigeant de 2023-2025"
+    },
+    {
+      "name": "Aboulal Ghali",
+      "role": "Co-fondateur",
+      "activity": "Membre actif depuis 2023"
+    },
+    {
+      "name": "Mounjid Mehdi",
+      "role": "Co-fondateur",
+      "activity": "Membre actif depuis 2023"
+    },
+    {
+      "name": "Arkha Mohamed reda",
+      "role": "Dirigeant",
+      "activity": "Membre actif depuis 2024"
+    }
+  ],
+
+  "contact": {
+    "email": "code.lab@lycee-descartes.ma",
+    "address": "Lycée Descartes, Salle Info B003",
+    "date": "Prochaine séance le jeudi 08 octobre 2023 de 13h à 15h"
+  }
+}

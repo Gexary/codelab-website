@@ -1,0 +1,44 @@
+import RotatingText from "@/components/utils/rotating-text";
+import { Section } from "@/components/utils/section";
+import { Important } from "@/components/app/utils";
+import { Terminal } from "@/components/app/terminal";
+import { LayoutGroup, motion } from "motion/react";
+
+export function MissionSection() {
+  return (
+    <Section className="py-60 overflow-x-hidden" rootClassName="flex flex-row max-sm:flex-col justify-between items-center max-ld:flex-wrap gap-y-16" id="about">
+      <div className="2xl:max-w-2xl max-w-xl">
+        <div className="flex flex-row items-center justify-start gap-2 mb-6 relative"></div>
+        <LayoutGroup>
+          <motion.p className="flex flex-row items-center justify-start gap-2 mb-6 relative" layout>
+            <motion.span className="text-4xl font-bold text-white" layout transition={{ type: "spring", damping: 30, stiffness: 400 }}>
+              Notre
+            </motion.span>
+            <RotatingText
+              texts={["mission", "vision", "approche", "expertise", "futur"]}
+              mainClassName="select-none pointer-events-none px-2 sm:px-2 md:px-3 bg-blue-600 text-4xl font-bold text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg flex justify-center"
+              staggerFrom={"last"}
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-120%" }}
+              staggerDuration={0.025}
+              splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+              transition={{ type: "spring", damping: 30, stiffness: 400 }}
+              rotationInterval={2000}
+            />
+          </motion.p>
+        </LayoutGroup>
+        <p className="text-zinc-300 text-base leading-loose">
+          <Important>CodeLab</Important> forme la nouvelle génération de développeurs en cultivant l'autonomie, la créativité et l'<Important>innovation</Important>. Nous explorons
+          l'<Important>algorithmie</Important>, la complexité temporelle, les structures de données et les réseaux pour préparer aux métiers du futur comme le{" "}
+          <Important>développement</Important>, la data science et la cybersécurité. Les membres acquièrent une véritable culture technique : se documenter, utiliser Git/GitHub,
+          résoudre des problèmes et partager leurs connaissances, dans un esprit d'apprentissage collaboratif et d'
+          <Important>innovation collective</Important>.
+        </p>
+      </div>
+      <div>
+        <Terminal />
+      </div>
+    </Section>
+  );
+}
