@@ -1,8 +1,8 @@
 {
-  "name": "codelabwebsite",
+  "name": "codelab-website",
   "homepage": "https://gexary.github.io/codelab-website/",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
