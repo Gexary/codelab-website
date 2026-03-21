@@ -5,7 +5,7 @@ import { Clock, Mail, MapPin, type LucideIcon } from "lucide-react";
 
 export function ContactSection() {
   return (
-    <Section className="py-40 pb-20 text-white relative" rootClassName="flex flex-row justify-between items-center flex-wrap gap-y-16" id="contact">
+    <Section className="py-40 pt-60 pb-20 text-white relative" rootClassName="flex flex-row justify-between items-center flex-wrap gap-y-16" id="contact">
       <div>
         <h1 className="text-4xl font-black text-white mb-4">Contactez-nous</h1>
         <p className="text-zinc-400 text-sm leading-loose">Une question ? Une idée de projet ? Rejoignez-nous et participez à l'aventure CodeLab !</p>

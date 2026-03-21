@@ -5,7 +5,7 @@ import { useAppData } from "@/context/AppData";
 
 export function StatsSection() {
   return (
-    <Section className="pt-40 pb-30">
+    <Section className="pt-60 pb-30">
       <AppStats />
     </Section>
   );

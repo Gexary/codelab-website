@@ -330,6 +330,12 @@ body {
   animation: light-pulse 10s ease infinite;
 }
 
+.gradient-light-3 {
+  background: #9ec8ff;
+  background: radial-gradient(circle, #9ec8ff 25%, #2b44ff 40%, #111b78d4 58%, #111b7800 100%);
+}
+
+
 @keyframes light-pulse {
   0% {
     opacity: 1;

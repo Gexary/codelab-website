@@ -1,8 +1,6 @@
-.vignette {
-  box-shadow: inset 0 0 16px 16px var(--color-zinc-950);
-}
+@import "tailwindcss";
 
-.gradient-separator::after {
+/* .gradient-separator::after {
   content: "";
   position: absolute;
   top: 0;
@@ -12,6 +10,21 @@
   height: 1px;
   background: var(--color-zinc-800);
   background: linear-gradient(to right, transparent 0%, var(--color-zinc-800) 20%, var(--color-zinc-800) 80%, transparent 100%);
+} */
+
+.inner-glow-2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 2px;
+  opacity: 100%;
+  background: #fff;
+  opacity: 40%;
+  background: linear-gradient(to right, #ffffff00 0%, #2b44ff 20%, #a6e9ff 30%, #a6e9ff 70%, #2b44ff 80%, #ffffff00 100%);
 }
 
 .gradient-separator::before {
@@ -26,35 +39,38 @@
   background: linear-gradient(to right, transparent 0%, var(--color-zinc-800) 20%, var(--color-zinc-800) 80%, transparent 100%);
 }
 
-.sliding-bg {
-  opacity: 0.8;
-  background-color: var(--color-zinc-950);
-  background-image:
-    linear-gradient(var(--color-zinc-800) 1px, transparent 1px),
-    linear-gradient(to right, var(--color-zinc-800) 1px, var(--color-zinc-950) 1px);
-  background-size: 20px 20px;
-  background-position: 10px;
-  position: relative;
-  animation: move-bg 1s linear infinite;
-}
+@layer utilities {
+  .sliding-bg {
+    --sb-color: theme(colors.zinc.700);
+    --sb-bg: theme(colors.zinc.950);
+    --sb-grid: 10px;
+    --sb-speed: 1s;
+    --sb-border: 1px;
 
-@keyframes move-bg {
-  0% {
-    background-position: 0px;
+    @apply relative bg-[--sb-bg];
+    background-image:
+      linear-gradient(var(--sb-color) var(--sb-border), transparent var(--sb-border)), linear-gradient(to right, var(--sb-color) var(--sb-border), transparent var(--sb-border));
+    background-size: calc(var(--sb-grid) * 2) calc(var(--sb-grid) * 2);
+    background-position: var(--sb-grid);
+    box-shadow: inset 0 0 64px 32px var(--sb-bg);
   }
 
-  100% {
-    background-position: 20px;
+  .sliding-bg::before {
+    content: "";
+    @apply absolute inset-0 -z-50;
+    background: linear-gradient(to left, transparent 0%, var(--sb-bg) 20%, var(--sb-bg) 80%, transparent 100%);
   }
-}
 
-.sliding-bg::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -50;
-  background: linear-gradient(to left, transparent 0%, var(--color-zinc-950) 20%, var(--color-zinc-950) 80%, transparent 100%);
+  .sb-animate {
+    animation: move-bg var(--sb-speed) linear infinite;
+  }
+
+  @keyframes move-bg {
+    from {
+      background-position: 0px;
+    }
+    to {
+      background-position: calc(var(--sb-grid) * 2);
+    }
+  }
 }
